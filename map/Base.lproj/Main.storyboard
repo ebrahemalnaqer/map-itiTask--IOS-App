@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="map" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Ry-tT-BfT">
+                                <rect key="frame" x="20" y="403.66666666666669" width="353" height="44.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Latitude" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0yA-mx-0eH">
+                                <rect key="frame" x="20" y="478.33333333333331" width="353" height="44.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0z-hB-mfY">
+                                <rect key="frame" x="30" y="563" width="333" height="32"/>
+                                <color key="backgroundColor" red="0.44705882349999998" green="0.5568627451" blue="0.46816865169999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="STIXTwoMath-Regular" family="STIX Two Math" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Show The Map">
+                                    <color key="titleColor" red="0.84313725490000002" green="0.8862745098" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="showMapButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sC0-aY-X0i"/>
+                                    <segue destination="zzx-Cx-fvV" kind="show" identifier="showMapSegue" id="19r-9r-X5g"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Ui-rA-0jz">
+                                <rect key="frame" x="20" y="329" width="353" height="44.666666666666686"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="30"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0Ry-tT-BfT" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1GZ-7d-Ba3"/>
+                            <constraint firstItem="K0z-hB-mfY" firstAttribute="top" secondItem="0yA-mx-0eH" secondAttribute="bottom" constant="40" id="DnZ-gm-dEu"/>
+                            <constraint firstItem="0Ry-tT-BfT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="GLh-1t-cTV"/>
+                            <constraint firstItem="0Ry-tT-BfT" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OYA-ee-v2V"/>
+                            <constraint firstItem="0yA-mx-0eH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Osl-ef-kK6"/>
+                            <constraint firstItem="K0z-hB-mfY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="TGQ-0T-MGJ"/>
+                            <constraint firstItem="0yA-mx-0eH" firstAttribute="top" secondItem="0Ry-tT-BfT" secondAttribute="bottom" constant="30" id="VJ2-KQ-ao3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0yA-mx-0eH" secondAttribute="trailing" constant="20" id="Vum-yy-J7U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Ui-rA-0jz" secondAttribute="trailing" constant="20" id="aMJ-81-srR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0Ry-tT-BfT" secondAttribute="trailing" constant="20" id="aj4-du-vWp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="K0z-hB-mfY" secondAttribute="trailing" constant="30" id="sHF-Go-siy"/>
+                            <constraint firstItem="9Ui-rA-0jz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="tNj-ir-lJm"/>
+                            <constraint firstItem="0Ry-tT-BfT" firstAttribute="top" secondItem="9Ui-rA-0jz" secondAttribute="bottom" constant="30" id="wMI-Dr-CeJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="infoButton" destination="K0z-hB-mfY" id="2HJ-4t-7Ie"/>
+                        <outlet property="latitudeTextField" destination="0yA-mx-0eH" id="Ei3-Lh-1dW"/>
+                        <outlet property="longitudeTextField" destination="0Ry-tT-BfT" id="i9N-4d-T4B"/>
+                        <outlet property="titleTextField" destination="9Ui-rA-0jz" id="FZy-m4-vdD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="-27"/>
+        </scene>
+        <!--MapVC-->
+        <scene sceneID="Bfq-iw-zkW">
+            <objects>
+                <viewController storyboardIdentifier="showMapSegue" id="zzx-Cx-fvV" customClass="MapVC" customModule="map" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5ai-Xc-38d">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ba7-iO-Dw4">
+                                <rect key="frame" x="0.0" y="59" width="393" height="724"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Fp-tN-tjI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Fp-tN-tjI" firstAttribute="trailing" secondItem="Ba7-iO-Dw4" secondAttribute="trailing" id="FbI-NM-wWS"/>
+                            <constraint firstItem="Ba7-iO-Dw4" firstAttribute="leading" secondItem="6Fp-tN-tjI" secondAttribute="leading" id="Fbs-B7-KCG"/>
+                            <constraint firstItem="Ba7-iO-Dw4" firstAttribute="top" secondItem="6Fp-tN-tjI" secondAttribute="top" id="Nea-sV-Kbf"/>
+                            <constraint firstItem="6Fp-tN-tjI" firstAttribute="bottom" secondItem="Ba7-iO-Dw4" secondAttribute="bottom" id="njG-pq-sa6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8Mt-du-fhj"/>
+                    <connections>
+                        <outlet property="mapView" destination="Ba7-iO-Dw4" id="2If-4Y-Ciq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xoa-iC-g5M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1010" y="-36"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
